@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="./CSS/facultyfeedbackLogin.css">
+    </head>
+    <body>
+        <script type="text/javascript">     
+            function validate_form()
+            {
+              //var pattern=/^[4][Cc][Bb][0-9]{2}[A-Za-z]{3}[0-9]{2}$/;  
+              //var pattern1=/^[4][Cc][Bb][0-9]{2}[A-Za-z]{2}[0-9]{3}$/;               
+                if ( $('#rollno').val()== "" ){
+                    alert ( "Please Enter Roll Number" );
+                    event.preventDefault();
+                    return false;
+                }
+                if ( $('#txtPassword').val()== "" ){
+                    alert ( "Please Enter Password" );
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
+        <center>
+            <div class="background">
+                <form method="POST" action="contro.php" class="form">
+                    <div class="form-group box">
+                        <label><p class="input-text">ID</p><input name="RollNumber" type="tel" id="rollno" class="form-control" autofocus /></label>
+                        <label><p class="input-text">Password</p><input name="Password" type="password" id="txtPassword" class="form-control "/></label>	
+                        <label><button type="submit" class="btn submit" onclick="validate_form()">Sign me in</button></label>
+                    </div>
+                </form>
+            </div> 
+        </center>           
+    </body>
+</html>

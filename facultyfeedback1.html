@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/main.css" />
+
+    <script src="main.js"></script>
+</head>
+
+<!--<form id="phoneform">
+    <input type="tel" id="phonenumber">
+    <input type="submit" id="submitbtn">
+</form>
+
+<input type="text" id="codef">
+-->
+
+<body>
+    <span style="float:right">
+        <a href="adminlogin.html">Admin Login</a>
+    </span>
+    <h1 class="heading">MUFFAKHAM JAH COLLEGE OF ENGINEERING AND TECHNOLOGY</h1>
+    <h2 class="heading">Teacher Evaluation/Feedback Form</h2>
+    <form action="submit.php" method="post">
+        <div class="row">
+            <div class="col-lg-4">
+                <p class="rollno">Roll Number:</p>
+                <input type="text" name="rollno" id="roll" required style="float:left" class="form-control rollno"
+                    autofocus onkeyup="saveformdata()">
+            </div>
+            <div class="col-lg-4">
+                <p>Department:</p>
+                <select name="dept" id="dept" onchange="saveformdata()" class="form-control">
+                    <option>-</option>
+                    <option>CSE</option>
+
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <p>Year:</p>
+                <select name="year" id="year" onchange="saveformdata()" class="form-control year">
+                    <option>-</option>
+                    <option>I Year</option>
+                    <option>II Year</option>
+                    <option>III Year</option>
+                    <option>IV Year</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                Section:
+                <select name="section" id="section" onchange="saveformdata()" class="form-control">
+                    <option>-</option>
+                    <option>A</option>
+                    <option>B</option>
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <script>
+                    $(document).ready(function () {
+                        $("#facultyname").on("keyup", function () {
+                            var value = $(this).val().toLowerCase();
+                            $("#subjAndFac option").filter(function () {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
+                        });
+                    });
+                </script>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <br>
+        <select name="facultyNameAndSubject" id="subjAndFac" class="form-control options" multiple>
+            <option>Mr. Syed Mohiuddin(Web Programming and Services)</option>
+            <option>Mr. Mohd Ahmed(Compiler Construction)</option>
+            <option>Dr. Syed Shabbir Ahmed(Design and Analysis of Algorithms)</option>
+            <option>Mrs. Syeda Ambareen Rana(Object Oriented System Development)</option>
+            <option>Mr. Khaja Zahooruddin(Computer Networks)</option>
+            <option>Mr. Syed Mohiuddin/Mr. Khaja Zahooruddin(CN/WPS Lab)</option>
+            <option>Mrs. Gauri R. Patil(Compiler Construction Lab)</option>
+            <option>Mrs. Afreen Sultana(Mini Project Lab)</option>
+        </select>
+
+        <!--<td colspan="4"  align="center">
+                    <select name="facultyNameAndSubject" id="subjAndFac" multiple>-->
+        <!-- <option>Mr. Syed Mohiuddin(Web Programming and Services)</option>
+                    <option>Mr. Mohd Ahmed(Compiler Construction)</option>
+                    <option>Dr. Syed Shabbir Ahmed(Design and Analysis of Algorithms)</option>
+                    <option>Mrs. Syeda Ambareen Rana(Object Oriented System Development)</option>
+                    <option>Mr. Khaja Zahooruddin(Computer Networks)</option>
+                    <option>Mr. Syed Mohiuddin/Mr. Khaja Zahooruddin(CN/WPS Lab)</option>
+                    <option>Mrs. Gauri R. Patil(Compiler Construction Lab)</option>
+                    <option>Mrs. Afreen Sultana(Mini Project Lab)</option> 
+                </select></td>-->
+        <center><div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <h3 class="heading1">S.No</h3>
+                        </th>
+                        <th>
+                            <h3 class="heading1">Parameters</h3>
+                        </th>
+                        <th>
+                            <h3 class="heading1">Unsatisfactory</h3>
+                        </th>
+                        <th>
+                            <h3 class="heading1">Satisfactory</h3>
+                        </th>
+                        <th>
+                            <h3 class="heading1">Good</h3>
+                        </th>
+                        <th>
+                            <h3 class="heading1">VeryGood</h3>
+                        </th>
+                        <th>
+                            <h3 class="heading1">Excellent</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>1</td>
+                        <td>
+                            <b>Subject knowledge: </b>Teacher has command over the subject</td>
+                        <td>
+                            <input type="radio" name="subk" value="1" onclick="subkk()" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="subk" value="2" onclick="subkk()" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="subk" value="3" onclick="subkk()" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="subk" value="4" onclick="subkk()" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="subk" value="5" onclick="subkk()" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>2</td>
+                        <td>
+                            <b>Preparedness and Presentation: </b>Explanation is clear and understandable</td>
+                        <td>
+                            <input type="radio" name="pap" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="pap" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="pap" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="pap" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="pap" value="5" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>3</td>
+                        <td>
+                            <b>Uniformity of Coverage: </b>The teacher spend adequate time and covers the syllabus uniformly</td>
+                        <td>
+                            <input type="radio" name="uoc" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="uoc" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="uoc" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="uoc" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="uoc" value="5" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>4</td>
+                        <td>
+                            <b>Problem Solving: </b>The teacher solves sufficient numerical problems</td>
+                        <td>
+                            <input type="radio" name="ps" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ps" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ps" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ps" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ps" value="5" required>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>5</td>
+                        <td>
+                            <b>Regularity: </b>The teacher is regular to class and maintain timings</td>
+                        <td>
+                            <input type="radio" name="reg" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="reg" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="reg" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="reg" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="reg" value="5" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>6</td>
+                        <td>
+                            <b>Student participation: </b>The teacher encourages questions in the class</td>
+                        <td>
+                            <input type="radio" name="sp" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="sp" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="sp" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="sp" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="sp" value="5" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>7</td>
+                        <td>
+                            <b>Doubt Clearing: </b>The teacher clears doubts satisfactory</td>
+                        <td>
+                            <input type="radio" name="dc" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="dc" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="dc" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="dc" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="dc" value="5" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>8</td>
+                        <td>
+                            <b>Teacher's commitment: </b>The teacher is concerned with student's progress and is enthusiastic</td>
+                        <td>
+                            <input type="radio" name="tc" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="tc" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="tc" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="tc" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="tc" value="5" required>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>9</td>
+                        <td>
+                            <b>Evaluation Procedure: </b>The Teacher evaluates the internal asssessment and assignment of all
+                            the students</td>
+                        <td>
+                            <input type="radio" name="ep" value="1" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ep" value="2" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ep" value="3" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ep" value="4" required>
+                        </td>
+                        <td>
+                            <input type="radio" name="ep" value="5" required>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </center>
+            <input type="submit" class="btn-info btn1">
+    </form>
+
+</body>
+
+</html>

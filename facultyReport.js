@@ -1,0 +1,1 @@
+console.log("The name of the faculty is: "+localStorage["facultyName"]);

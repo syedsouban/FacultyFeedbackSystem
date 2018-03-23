@@ -1,0 +1,19 @@
+.facname{
+    list-style-type: none;
+    margin-left: 450px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;  
+    color: rgb(95, 132, 202);
+}   
+a:hover{
+    color: blue;
+    text-decoration: none;
+}
+.input{
+    height: 40px;
+}
+.para{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,35 @@
+.heading{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.heading1{
+    margin-right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#roll, #year
+{
+    margin-right: 7%;
+}
+.rbutton{
+    margin-left: 10px;
+}
+
+.btn1{
+     margin-left: 500px;
+     width: 80px;
+     height: 30px;
+     border-radius: 6px;
+}
+body{
+    background-color: rgba(190, 188, 188, 0.164);
+}
+.rollno{
+    margin-left: 10px;
+}
+.year{
+    margin-right: 20px;
+}
+.options{
+    width: 300px;
+    margin: 0px auto;
+}
