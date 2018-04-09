@@ -1,5 +1,11 @@
 
-        <?php $facultyname = $_GET['facName']; 
+        <?php 
+        session_start();
+        if(isset($_SESSION["loggedIn"]))
+        {
+        if($_SESSION["loggedIn"])
+        {    
+        $facultyname = $_GET['facName']; 
         error_reporting(E_ERROR | E_PARSE);
         //ini_set('display_error','0');
         $fname=$facultyname;
@@ -12,7 +18,9 @@
          $facultyname= str_replace(" ","1",$facultyname);
          $facultyname= str_replace(".","1",$facultyname);
         //  echo $facultyname."<br>";
-
+        echo '<form style="float:right" action="" method="post" id="frmLogout">
+                <input type="submit" name="logout" value="Logout" class="logout-button">.</div>
+                </form>';
          echo "<center><h1>Faculty Report</h1></center>";
          echo "<center><h2>$fname</h2></center>";
          echo "<p class='para1' align='center'><b>Subject taught: $subjname";
@@ -237,7 +245,22 @@
 	        array("y" => $param9arr[2], "label" => "Satisfactory Ratings" ),
 	        array("y" => $param9arr[3], "label" => "Good Ratings" ),
 	        array("y" => $param9arr[4], "label" => "Very Good Ratings" ),
-            array("y" => $param9arr[5], "label" => "Excellent Ratings" ));                                                
+            array("y" => $param9arr[5], "label" => "Excellent Ratings" ));                            }
+            else {
+                echo "You are not authorized to access this page";
+            }
+        }
+            else {
+                echo "You are not authorized to access this page";
+            }
+            if(isset($_POST["logout"]))
+{
+    $_SESSION["loggedIn"]=false;
+    session_destroy();
+    header("Location: adminlogin.html");
+    exit;
+}
+                    
          ?>
 
 
